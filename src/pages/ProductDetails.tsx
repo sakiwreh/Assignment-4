@@ -1,4 +1,4 @@
-import {  Link, NavLink, Outlet, useParams } from "react-router-dom";
+import { NavLink, Outlet, useParams } from "react-router-dom";
 import { useProductQuery } from "../queries/ProductQueries";
  
 const ProductDetails = () => {
@@ -21,12 +21,13 @@ const ProductDetails = () => {
           Rs: {product.price}
         </p>{" "}
         <NavLink
-          to="AddToCart"
+          to="customize"
           className="mt-6 inline-block text-gray-400 px-6 py-2 rounded"
         >
-          Add to cart
+          Select Size & Add to cart
         </NavLink>
       </div>
+      <Outlet context={product}/>
     </div>
   );
 };

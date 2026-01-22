@@ -7,6 +7,7 @@ import Cart from "../pages/Cart";
 import About from "../pages/About";
 import NotFound from "../pages/NotFound";
 import MainLayout from "../layouts/MainLayout";
+import CustomizeDialog from "../pages/CustomizeDialog";
 
 export const router = createBrowserRouter([
   {
@@ -19,7 +20,13 @@ export const router = createBrowserRouter([
         element: <Shop />,
         children: [
           { path: "products", element: <Products /> },
-          { path: "product/:productId", element: <ProductDetail /> },
+          { 
+            path: "product/:productId", 
+            element: <ProductDetail />,
+            children: [
+                {path: "customize", element: <CustomizeDialog />}
+            ]
+        },
           { path: "cart", element: <Cart /> },
         ],
       },
