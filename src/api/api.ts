@@ -20,6 +20,6 @@ export const fetchProducts = () =>
 export const fetchProductById = (id: string) =>
   axiosClient.get(`/products/${id}`).then((res) => res.data);
 export const addProduct = (product: any) =>
-  axiosClient.post("/products", product).then((res) => res.data);
+  axiosClient.post("/products/add", product).then((res) => res.data);
  
 export default axiosClient;
