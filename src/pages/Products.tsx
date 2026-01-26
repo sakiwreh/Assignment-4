@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import  {useProductsQuery}  from "../queries/ProductQueries";
 
 
@@ -9,8 +9,9 @@ export default function Products() {
     if(isError) return <p>Error: {error.message}</p>
 
   return <>
-    <h1 className="text-xl font-bold text-orange-500">Welcome to Shopping</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg-grid-cols-4 gap-6">
+    <h1 className="pb-3 text-xl font-bold text-orange-500">Welcome to Shopping</h1>
+    <Link to="/shop/add-product" className="p-4 bg-green-600 text-white px-4 py-2 rounded">Add New Product</Link>
+      <div className="p-3 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg-grid-cols-4 gap-6">
         {data.map((product:any) => (
             <div className="bg-white border border-gray-200 rounded-lg p-5 flex flex-col justify-between h-full">
                 <span className="inline-block bg-gray-100 text=gray-600 text-xsfont-bold px-2 py-1 rounded mb-3">{product.category}</span>

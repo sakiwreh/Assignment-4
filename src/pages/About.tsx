@@ -1,7 +1,7 @@
 export default function About(){
-    return(
-        <>
-            <p>About us</p>
-        </>
-    )
+    return (
+        <div className='container'>
+            About us
+        </div>
+    );
 }

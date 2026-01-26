@@ -8,6 +8,7 @@ import About from "../pages/About";
 import NotFound from "../pages/NotFound";
 import MainLayout from "../layouts/MainLayout";
 import CustomizeDialog from "../pages/CustomizeDialog";
+import AddProduct from "../pages/AddProduct";
 
 export const router = createBrowserRouter([
   {
@@ -20,6 +21,7 @@ export const router = createBrowserRouter([
         element: <Shop />,
         children: [
           { path: "products", element: <Products /> },
+          { path: "add-product", element: <AddProduct/>},
           { 
             path: "product/:productId", 
             element: <ProductDetail />,

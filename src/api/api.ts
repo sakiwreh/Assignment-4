@@ -15,11 +15,11 @@ axiosClient.interceptors.response.use(
   }
 );
  
-export const fetchProducts = () =>
-  axiosClient.get("/products").then((res) => res.data.products);
-export const fetchProductById = (id: string) =>
-  axiosClient.get(`/products/${id}`).then((res) => res.data);
-export const addProduct = (product: any) =>
-  axiosClient.post("/products/add", product).then((res) => res.data);
+export const fetchProducts = async () =>
+  await axiosClient.get("/products").then((res) => res.data.products);
+export const fetchProductById = async (id: string) =>
+  await axiosClient.get(`/products/${id}`).then((res) => res.data);
+export const addProduct = async (product: any) =>
+  await axiosClient.post("/products/add", product).then((res) => res.data);
  
 export default axiosClient;
